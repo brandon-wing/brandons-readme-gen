@@ -58,7 +58,7 @@ const userQuestions = [
 
 // TODO: Create a function to write README file
 function writeToFile(fileName, data) {
-fs.writeFile("NEWREADME.md", data, (err) => {
+fs.writeFile(fileName, data, (err) => {
   if (err)
     console.log(err);
   else {
@@ -70,7 +70,10 @@ fs.writeFile("NEWREADME.md", data, (err) => {
 
 // TODO: Create a function to initialize app
 function init() {
-    inquirer.prompt(userQuestions).then (writeToFile());
+    inquirer.prompt(userQuestions).then(answers => {
+        console.log(answers);
+        writeToFile("newreadme.md", markdown(answers))
+    })
 }
 
 
