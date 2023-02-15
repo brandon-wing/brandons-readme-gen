@@ -19,11 +19,11 @@ const userQuestions = [
     {
         type: 'input',
         message: 'What are the steps required to install your project? Provide a step-by-step description of how to get the development environment running.',
-        name:'installation process'
+        name:'installationProcess'
     },
     {
         type: 'input',
-        message: 'Provide instructions and examples for use. Include screenshots as needed.',
+        message: 'Provide instructions and examples for use.',
         name:'usage'
     },
     {
@@ -58,13 +58,23 @@ const userQuestions = [
 
 // TODO: Create a function to write README file
 function writeToFile(fileName, data) {
-
+fs.writeFile("NEWREADME.md", data, (err) => {
+  if (err)
+    console.log(err);
+  else {
+    console.log("File written successfully\n");
+  }
+})
 }
+
 
 // TODO: Create a function to initialize app
 function init() {
-    inquirer.prompt(userQuestions)
+    inquirer.prompt(userQuestions).then (writeToFile());
 }
+
+
 
 // Function call to initialize app
 init();
+
