@@ -30,7 +30,7 @@ function generateMarkdown(data) {
   ##Usage
     ${data.usage}
 
-    ${renderLicenseSection(data.license)}
+    ${renderLicenseSection${data.license}}
 
     ${data.license}
   
