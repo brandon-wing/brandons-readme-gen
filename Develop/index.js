@@ -34,7 +34,7 @@ const userQuestions = [
     {
         type: 'input',
         message:'Please enter your github username.',
-        name:'username'
+        name:'github'
     },
     {
         type: 'input',
@@ -62,18 +62,35 @@ fs.writeFile(fileName, data, (err) => {
   if (err)
     console.log(err);
   else {
-    console.log("File written successfully\n");
+    console.log("New README written successfully!");
   }
 })
+
 }
 
 
 // TODO: Create a function to initialize app
 function init() {
-    inquirer.prompt(userQuestions).then(answers => {writeToFile("newreadme.md", markdown(answers))})
+    inquirer.prompt(userQuestions)
+        .then(data => {
+            console.log("Data: ", data);  // Data [Object object]
+
+            // pass the collected data to 
+            let result = markdown(data);
+            console.log("Markdown: ", result);
+            writeToFile("README.md", result);
+        })
+        .catch(err => {
+            throw err;
+        })
+
+    
+
 }
 
-
+function generateMarkdown(data) {
+    return;
+}
 
 // Function call to initialize app
 init();
