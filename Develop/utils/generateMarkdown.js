@@ -1,24 +1,40 @@
 
-// function renderLicenseBadge(license) {
-//   if (license[0] === 'No license required!') {
-//     return ``}
-//   else {
-//     return `https://img.shields.io/badge/red`}
-// }
+function renderLicenseBadge(license) {
+  if (license === 'No license required!') {
+    return ``}
+  else {
+    
+}
+}
 
-// function renderLicenseLink(license) {
-//   if (license[0] === 'No license required!') {
-//     return ``}
-//   else {
-//     return ` License link: https://choosealicense.com/licenses/${license}`}
-// }
+function renderLicenseLink(license) {
+  if (license === 'No license required!') {
+    return ``}
+  else if (license === 'MIT') {
+    return `License link: https://choosealicense.com/licenses/mit/`
+  }
+  else if (license === 'W3C') {
+    return `License link: https://www.w3.org/Consortium/Legal/2015/copyright-software-and-document`
+  }
+  else if (license === 'ISC') {
+    return `License link: https://opensource.org/license/isc-license-txt/`
+  }
+  else if (license === 'AAL') {
+    return `License link: https://spdx.org/licenses/AAL.html`
+
+  }
+  else if (license === 'NTP') {
+    return `License link: https://opensource.org/license/ntp-license-php/`
+    
+  }
+}
 
 
 function renderLicenseSection(license) {
   if (license === 'No license required!') {
     return ``}
   else {
-        return `## License ${license[0]}`;
+        return `## License: ${license}`;
     }
 }
 
@@ -36,6 +52,8 @@ function generateMarkdown(data) {
   ${data.usage}
 
 ${renderLicenseSection(data.license)} 
+${renderLicenseBadge(data.license)}
+${renderLicenseLink(data.license)}
 
 
 ## Screenshot
