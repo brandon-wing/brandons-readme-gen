@@ -47,7 +47,7 @@ const userQuestions = [
         name:'contact'
     },
     {
-        type: 'checkbox',
+        type: 'list',
         message: 'Please select the license used for this project.',
         name:'license',
         choices: ['MIT', 'W3C', 'ISC', 'AAL', 'NTP', 'No license required!']
