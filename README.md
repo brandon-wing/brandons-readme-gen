@@ -8,6 +8,7 @@
 
 ## Usage
   Below, I have provided a walkthrough video on how to use this application.
+  https://www.youtube.com/watch?v=Uv8BdAGFI9o
 
 ## Credits
   rudyxwhite
